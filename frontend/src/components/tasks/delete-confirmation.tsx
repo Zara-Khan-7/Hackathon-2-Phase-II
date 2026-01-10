@@ -29,7 +29,7 @@ export function DeleteConfirmation({
       <div className="mt-2">
         <p className="text-sm text-gray-600">
           Are you sure you want to delete{" "}
-          <span className="font-medium text-gray-900">"{taskTitle}"</span>?
+          <span className="font-medium text-gray-900">&quot;{taskTitle}&quot;</span>?
         </p>
       </div>
 

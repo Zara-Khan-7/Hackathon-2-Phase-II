@@ -1,3 +1,13 @@
+---
+title: Todo App Backend API
+emoji: "API"
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+license: mit
+---
+
 # Backend Core & Data Layer
 
 RESTful API for managing user-owned tasks with JWT authentication.
