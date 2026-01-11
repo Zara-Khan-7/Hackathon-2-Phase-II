@@ -187,7 +187,7 @@ API Docs at: http://localhost:8000/docs
 
 ## Author
 
-**Rabeeka**
+**Zara**
 
 ## License
 
