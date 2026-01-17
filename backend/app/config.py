@@ -19,6 +19,9 @@ class Settings(BaseSettings):
     # CORS
     cors_origins: str = "http://localhost:3000"
 
+    # Groq API (Phase III: AI Chatbot - free alternative to OpenAI)
+    groq_api_key: str = ""
+
     # Debug
     debug: bool = False
 

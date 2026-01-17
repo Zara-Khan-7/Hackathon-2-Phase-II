@@ -8,6 +8,8 @@ from fastapi import HTTPException, status
 from typing import Generator
 
 from app.config import get_settings
+# Import models to register with SQLModel metadata
+from app.models import Task, Conversation, Message  # noqa: F401
 
 # Get settings
 settings = get_settings()

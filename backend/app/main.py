@@ -11,7 +11,8 @@ from datetime import datetime
 
 from app.config import get_settings
 from app.database import create_db_and_tables
-from app.routers import tasks
+from app.routers import tasks, chat
+from app.mcp import register_all_tools
 
 # Get settings
 settings = get_settings()
@@ -19,9 +20,11 @@ settings = get_settings()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Application lifespan - initialize database on startup."""
+    """Application lifespan - initialize database and MCP tools on startup."""
     # Startup: create database tables
     create_db_and_tables()
+    # Startup: register MCP tools
+    register_all_tools()
     yield
     # Shutdown: cleanup if needed
     pass
@@ -48,6 +51,7 @@ app.add_middleware(
 
 # Register routers
 app.include_router(tasks.router)
+app.include_router(chat.router)
 
 
 # Structured error response handler for validation errors

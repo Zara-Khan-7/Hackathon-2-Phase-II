@@ -13,6 +13,7 @@ import { DeleteConfirmation } from "@/components/tasks/delete-confirmation";
 import { Dialog } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { SignOutButton } from "@/components/auth/signout-button";
+import Link from "next/link";
 import type { Task, TaskFilters as FilterType, TaskStatus, CreateTaskInput, UpdateTaskInput } from "@/types/task";
 
 function DashboardContent() {
@@ -161,7 +162,23 @@ function DashboardContent() {
       {/* Header */}
       <header className="border-b bg-white shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <h1 className="text-xl font-bold text-gray-900">Todo App</h1>
+          <div className="flex items-center gap-4">
+            <h1 className="text-xl font-bold text-gray-900">Todo App</h1>
+            <nav className="flex gap-2">
+              <Link
+                href="/dashboard"
+                className="rounded-md bg-blue-50 px-3 py-1.5 text-sm font-medium text-blue-700"
+              >
+                Dashboard
+              </Link>
+              <Link
+                href="/chat"
+                className="rounded-md px-3 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+              >
+                Chat
+              </Link>
+            </nav>
+          </div>
           <div className="flex items-center gap-4">
             {session?.user && (
               <span className="text-sm text-gray-600">
